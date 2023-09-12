@@ -1,0 +1,13 @@
+[
+  {
+    "id": "1",
+    "title": "Project A",
+    "description": "Description for Project A...",
+    "image": "path/to/imageA.jpg",
+    "techUsed": ["React", "TailwindCSS"],
+    "link": {
+      "code": "https://github.com/nikolajsvv",
+      "live": "https://nikolajsveidis.com"
+    }
+  }
+]
