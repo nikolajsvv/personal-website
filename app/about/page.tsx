@@ -1,80 +1,133 @@
 'use client';
-import Image from 'next/image';
-import currentProfileImg from 'public/images/profile_current.png';
 import anime from 'animejs';
+import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
+import {
+	AiFillLinkedin,
+	AiFillGithub,
+	AiFillTwitterSquare,
+} from 'react-icons/ai';
+import { MdEmail } from 'react-icons/md';
+import { annotate } from 'rough-notation';
+import RecentWorkCard from '../../components/RecentWorkCard';
 
 export default function AboutPage() {
-	const [showSplash, setShowSplash] = useState(true);
+	const [text, setText] = useState({ first: 'hello', second: 'sveiks' });
 	const helloRef = useRef(null);
 	const sveiksRef = useRef(null);
+	const slashRef = useRef(null);
+	const austinRef = useRef<HTMLDivElement>(null);
 
-	useEffect(() => {
-		anime({
-			targets: '#animatedImage',
-			opacity: [0, 1],
-			scale: [0.5, 1],
-			duration: 2000,
-			easing: 'easeOutCubic',
-		});
+	// useEffect(() => {
+	// 	anime({
+	// 		targets: [helloRef.current, sveiksRef.current],
+	// 		translateY: [-100, 0],
+	// 		opacity: [0, 1],
+	// 		duration: 1500,
+	// 		easing: 'easeOutExpo',
+	// 		delay: anime.stagger(200),
+	// 	});
 
-		const timeoutId = setTimeout(() => {
-			setShowSplash(false);
-		}, 3000);
+	// 	anime
+	// 		.timeline({
+	// 			targets: slashRef.current,
+	// 			duration: 1500,
+	// 			easing: 'easeOutExpo',
+	// 		})
+	// 		.add({
+	// 			translateX: [-50, 0],
+	// 			opacity: [0, 1],
+	// 		});
 
-		return () => clearTimeout(timeoutId);
-	}, []);
+	// 	const intervalId = setInterval(() => {
+	// 		if (text.first === 'hello') {
+	// 			setText({ first: 'I am', second: 'Nikolajs' });
+	// 		} else {
+	// 			setText({ first: 'hello', second: 'sveiks' });
+	// 		}
+	// 	}, 5000);
 
-	// New useEffect to handle animations for hello and sveiks
-	useEffect(() => {
-		if (!showSplash) {
-			anime({
-				targets: [helloRef.current, sveiksRef.current],
-				translateY: [-100, 0],
-				opacity: [0, 1],
-				duration: 1500,
-				easing: 'easeOutExpo',
-				delay: anime.stagger(200),
-			});
-		}
-	}, [showSplash]); // Dependency array ensures this useEffect runs when showSplash changes
+	// 	return () => clearInterval(intervalId);
+	// }, [text]);
+
+	// useEffect(() => {
+	// 	const annotation = annotate(austinRef.current!, {
+	// 		type: 'highlight',
+	// 		color: '#EF3E36',
+	// 		iterations: 2,
+	// 	});
+
+	// 	annotation.show();
+	// }, []);
 
 	return (
-		<div className='h-screen flex'>
-			{showSplash ? (
-				// Splash Screen
-				<div className='flex h-screen w-full items-center justify-center bg-gray-900'>
-					<Image
-						src={currentProfileImg}
-						alt='Image of Nikolajs'
-						id='animatedImage'
-						width={200}
-						height={200}
-					/>
+		<div className='h-screen w-screen'>
+			<div className='w-full h-1/2 flex flex-col md:flex-row justify-center items-center'>
+				<div className='flex flex-col'>
+					<div className='flex flex-row items-center justify-center cursor-default text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl uppercase'>
+						<h1
+							ref={helloRef}
+							className='font-bold text-night dark:text-ghost-white'
+						>
+							{text.first}
+						</h1>
+						<h1 ref={slashRef} className='font-bold text-vermilion px-3'>
+							/
+						</h1>
+						<h1
+							ref={sveiksRef}
+							className='font-bold text-night dark:text-ghost-white'
+						>
+							{text.second}
+						</h1>
+					</div>
+					<div className='hidden md:flex flex-row mt-8 space-x-10 justify-center items-center'>
+						<a
+							href='https://www.linkedin.com/in/nikolajsveidis/'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<AiFillLinkedin className='text-night dark:text-ghost-white h-8 w-8 md:h-10 md:w-10 cursor-pointer hover:scale-125 hover:text-vermilion hover:dark:text-vermilion transform duration-200' />
+						</a>
+						<a
+							href='https://github.com/nikolajsvv'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<AiFillGithub className='text-night dark:text-ghost-white h-8 w-8 md:h-10 md:w-10 cursor-pointer hover:scale-125 hover:text-vermilion hover:dark:text-vermilion transform duration-200' />
+						</a>
+						<a
+							href='https://twitter.com/_nikolajs'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<AiFillTwitterSquare className='text-night dark:text-ghost-white h-8 w-8 md:h-10 md:w-10 cursor-pointer hover:scale-125 hover:text-vermilion hover:dark:text-vermilion transform duration-200' />
+						</a>
+						<a
+							href='mailto:nikolajsvv@gmail.com'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<MdEmail className='text-night dark:text-ghost-white h-8 w-8 md:h-10 md:w-10 cursor-pointer hover:scale-125 hover:text-vermilion hover:dark:text-vermilion transform duration-200' />
+						</a>
+					</div>
 				</div>
-			) : (
-				<div className='flex flex-col md:flex-row w-full justify-center items-center'>
-					<h1
-						ref={helloRef}
-						className='text-6xl md:text-8xl font-bold mb-4 md:mb-0 md:translate-x-12'
-					>
-						hello
-					</h1>
-					<Image
-						src={currentProfileImg}
-						alt={'Image of Nikolajs'}
-						width={300}
-						height={300}
-						className='hidden md:inline z-10'
-					/>
-					<h1
-						ref={sveiksRef}
-						className='text-6xl md:text-8xl font-bold text-gray-500 mt-4 md:mt-0 md:-translate-x-12'
-					>
-						sveiks
-					</h1>
+				<div className='flex w-full md:w-1/3 items-center justify-center p-4 uppercase'>
+					<p className='text-dim-gray dark:text-ghost-white text-lg md:text-xl text-center md:text-left'>
+						I am a versatile software engineer currently based in
+						<span ref={austinRef} className='mx-2'>
+							{' '}
+							Austin, TX{' '}
+						</span>
+						with a distinctive blend of experience in web development, data
+						analytics, and finance.
+					</p>
 				</div>
-			)}
+			</div>
+			<div className='flex flex-col justify-start items-start'>
+				<h1 className='text-2xl font-bold uppercase'>Recent Work</h1>
+				<RecentWorkCard />
+			</div>
 		</div>
 	);
 }

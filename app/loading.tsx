@@ -15,11 +15,11 @@ export default function Loading() {
 		});
 	}, []);
 	return (
-		<div className='flex h-screen w-full items-center justify-center '>
+		<div className='flex h-screen w-full items-center justify-center bg-night'>
 			<div className='space-x-2'>
 				<span className='animate-dot bg-white w-4 h-4 rounded-full inline-block'></span>
 				<span className='animate-dot bg-white w-4 h-4 rounded-full inline-block'></span>
-				<span className='animate-dot bg-white w-4 h-4 rounded-full inline-block'></span>{' '}
+				<span className='animate-dot bg-white w-4 h-4 rounded-full inline-block'></span>
 			</div>
 		</div>
 	);

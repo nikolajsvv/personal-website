@@ -1,26 +1,28 @@
 'use client';
 import anime from 'animejs';
+import Image from 'next/image';
+import currentProfileImg from 'public/images/profile_current.png';
 import { useEffect } from 'react';
 
 export default function Loading() {
 	useEffect(() => {
 		anime({
-			targets: '.animate-dot',
-			translateY: [
-				{ value: -10, duration: 500 },
-				{ value: 0, duration: 500 },
-			],
-			delay: anime.stagger(100),
-			loop: true,
+			targets: '.animatedImage',
+			opacity: [0, 1],
+			scale: [0.5, 1],
+			duration: 2000,
+			easing: 'easeOutCubic',
 		});
 	}, []);
 	return (
-		<div className='flex h-screen w-full items-center justify-center '>
-			<div className='space-x-2'>
-				<span className='animate-dot bg-white w-4 h-4 rounded-full inline-block'></span>
-				<span className='animate-dot bg-white w-4 h-4 rounded-full inline-block'></span>
-				<span className='animate-dot bg-white w-4 h-4 rounded-full inline-block'></span>{' '}
-			</div>
+		<div className='animatedImage flex h-screen w-full items-center justify-center bg-night '>
+			<Image
+				src={currentProfileImg}
+				alt='Image of Nikolajs'
+				width={300}
+				height={300}
+				className='animate-splash-spin'
+			/>
 		</div>
 	);
 }
