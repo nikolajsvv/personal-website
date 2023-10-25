@@ -3,11 +3,14 @@ import Head from 'next/head';
 import type { Metadata } from 'next';
 import { Maven_Pro } from 'next/font/google';
 import Navbar from '../components/Navbar';
+import { Analytics } from '@vercel/analytics/react';
 
 const mavenPro = Maven_Pro({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'Nikolajs Veidis',
+	description:
+		"Nikolajs' personal website showcasing a curated selection of his work and professional experience in software engineering.",
 };
 
 export default function RootLayout({
@@ -28,6 +31,7 @@ export default function RootLayout({
 			<body className={`${mavenPro.className} bg-ghost-white dark:bg-night`}>
 				<Navbar />
 				{children}
+				<Analytics />
 			</body>
 		</html>
 	);
