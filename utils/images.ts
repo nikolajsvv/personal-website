@@ -22,7 +22,28 @@ import JsLogo from '@/public/images/akar-icons_javascript-fill.svg';
 import SpotifyLogo from '@/public/images/akar-icons_spotify-fill.svg';
 import TwitchIcon from '@/public/images/mdi_twitch.svg';
 
+import TwitchPurple from '@/public/images/twitch-purple.svg';
+import FigmaPurple from '@/public/images/figma-purple.svg';
+import DenoPurple from '@/public/images/deno-purple.svg';
+import TailwindPurple from '@/public/images/tailwindcss-purple.svg';
+import VercelPurple from '@/public/images/vercel-purple.svg';
+import SpotifyPurple from '@/public/images/spotify-purple.svg';
+import JsPurple from '@/public/images/js-purple.svg';
+import NextPurple from '@/public/images/next-purple.svg';
+import TsPurple from '@/public/images/ts-purple.svg';
+import D3Purple from '@/public/images/d3-purple.svg';
+
 export {
+	TsPurple,
+	D3Purple,
+	JsPurple,
+	NextPurple,
+	TwitchPurple,
+	FigmaPurple,
+	DenoPurple,
+	VercelPurple,
+	SpotifyPurple,
+	TailwindPurple,
 	TaskManagerLogo,
 	StanfordLogo,
 	DenoLogo,
