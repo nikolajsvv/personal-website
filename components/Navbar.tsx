@@ -20,7 +20,7 @@ export default function Navbar() {
 	}, []);
 
 	return (
-		<div className='flex fixed z-50 w-full justify-end items-center p-3 md:p-5 text-night dark:text-ghost-white uppercase '>
+		<div className='fixed right-0 z-50  justify-end items-center p-3 md:p-5 text-night dark:text-ghost-white uppercase '>
 			<div>
 				<button id='darkModeToggle'>
 					<MdDarkMode className='text-night dark:text-ghost-white h-8 w-8 hover:scale-125 transform duration-200 ' />

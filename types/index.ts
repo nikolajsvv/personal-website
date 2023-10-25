@@ -1,20 +1,18 @@
 import { StaticImageData } from 'next/image';
 
-export interface Project {
-	backgroundImage: StaticImageData;
-	title: string;
-	description: string;
-	tech: string[];
-	link: string;
-}
-
-export type RecentWorkCardProps = {
-	project: Project;
-	onClick: () => void;
-};
-
 export interface RecentWorkModalProps {
-	project: Project;
+	cardData: CardProps;
 	isOpen: boolean;
 	onClose: () => void;
 }
+
+export type CardProps = {
+	id: string;
+	title: string;
+	description: string;
+	image: string;
+	tech: string[];
+	link: string;
+	styling: string;
+	imageStyling: string;
+};

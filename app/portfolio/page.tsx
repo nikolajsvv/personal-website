@@ -1,6 +1,5 @@
 import Header from '@/components/Header';
 import RecentWork from '@/components/RecentWork';
-import Carousel from '@/components/Carousel';
 
 export default function HomePage() {
 	return (

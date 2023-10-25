@@ -5,11 +5,11 @@ import { RecentWorkModalProps } from '../types';
 import { HiOutlineArrowLeft } from 'react-icons/hi';
 import React from 'react';
 export default function RecentWorkModal({
-	project,
+	cardData,
 	isOpen,
 	onClose,
 }: RecentWorkModalProps) {
-	const { title, description, tech, backgroundImage, link } = project;
+	const { title, description, tech, link } = cardData;
 	const modalRef = useRef(null);
 
 	const modalVariants = {
@@ -25,7 +25,7 @@ export default function RecentWorkModal({
 			exit={{ opacity: 0 }}
 		>
 			<motion.div
-				className='fixed w-full h-screen inset-0 bg-ghost-white dark:bg-night z-50 flex items-center justify-center'
+				className='absolute w-full h-screen inset-0 bg-ghost-white dark:bg-night z-40 flex items-center justify-center'
 				variants={modalVariants}
 				initial='closed'
 				animate={isOpen ? 'open' : 'closed'}
@@ -33,7 +33,7 @@ export default function RecentWorkModal({
 			>
 				<div className='flex flex-col md:flex-row h-full max-w-screen-xl mx-auto pt-10 px-4 md:px-0'>
 					{/* Left Column */}
-					<div className='flex flex-col w-2/3 md:w-96 '>
+					<div className='flex flex-col w-2/3 md:w-96'>
 						<button onClick={onClose}>
 							<HiOutlineArrowLeft className='text-night dark:text-ghost-white h-8 w-8' />
 						</button>

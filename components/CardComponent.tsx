@@ -5,6 +5,7 @@ import {
 	DenoLogo,
 	TwitchLogo,
 } from '@/utils/images';
+import { useState } from 'react';
 
 interface CardComponentProps {
 	data: CardProps;
@@ -27,11 +28,15 @@ type GenerateImageProps = {
 };
 
 export default function CardComponent({ data }: CardComponentProps) {
-	const { id, title, description, image, tech, link, styling, imageStyling } =
-		data;
+	const [showFullView, setShowFullView] = useState(false);
+
+	const { title, image, styling, imageStyling } = data;
+
 	return (
-		<div className={`${styling} h-[257px] w-[197px] cursor-pointer relative`}>
-			<h1 className='text-[16px] pt-[30px] pr-[6px] text-right tracking-tight leading-5'>
+		<div
+			className={`${styling} h-[257px] w-[197px] cursor-pointer relative shadow-default hover:-translate-y-3 transition-all duration-300`}
+		>
+			<h1 className='text-[16px] pt-[30px] pr-[8px] text-right tracking-tight leading-5'>
 				{title}
 			</h1>
 			<GenerateImage image={image} imageStyling={imageStyling} />
