@@ -34,9 +34,9 @@ export default function CardComponent({ data }: CardComponentProps) {
 
 	return (
 		<div
-			className={`${styling} h-[257px] w-[197px] cursor-pointer relative shadow-default hover:-translate-y-3 transition-all duration-300`}
+			className={`${styling} h-[350px] w-[250px] md:h-[400px] md:w-[300px] cursor-pointer relative shadow-default hover:-translate-y-3 transition-all duration-500`}
 		>
-			<h1 className='text-[16px] pt-[30px] pr-[8px] text-right tracking-tight leading-5'>
+			<h1 className='absolute right-0 w-full md:w-2/3 text-[20px] pt-[30px] pr-[8px] font-semibold text-right tracking-tight leading-5'>
 				{title}
 			</h1>
 			<GenerateImage image={image} imageStyling={imageStyling} />

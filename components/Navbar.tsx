@@ -11,9 +11,6 @@ export default function Navbar() {
 		const darkModeToggle = document.getElementById('darkModeToggle')!;
 		darkModeToggle.addEventListener('click', toggleDarkMode);
 
-		// Automatically enable dark mode
-		document.documentElement.classList.add('dark');
-
 		return () => {
 			darkModeToggle.removeEventListener('click', toggleDarkMode);
 		};
