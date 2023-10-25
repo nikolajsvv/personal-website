@@ -10,9 +10,13 @@ export type CardProps = {
 	id: string;
 	title: string;
 	description: string;
-	image: string;
+	image: string | StaticImageData;
 	tech: string[];
 	link: string;
 	styling: string;
 	imageStyling: string;
 };
+
+export interface CardComponentProps {
+	data: CardProps;
+}

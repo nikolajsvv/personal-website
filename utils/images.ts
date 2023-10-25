@@ -16,6 +16,11 @@ import VBAIcon from '@/public/images/vscode-icons_file-type-vba.svg';
 import SalesIcon from '@/public/images/icon-park-solid_sales-report.svg';
 import StrategyIcon from '@/public/images/fluent_lightbulb-32-filled.svg';
 import BudgetingIcon from '@/public/images/ph_piggy-bank-fill.svg';
+import D3Icon from '@/public/images/file-icons_d3.svg';
+import DenoIcon from '@/public/images/devicon_denojs.svg';
+import JsLogo from '@/public/images/akar-icons_javascript-fill.svg';
+import SpotifyLogo from '@/public/images/akar-icons_spotify-fill.svg';
+import TwitchIcon from '@/public/images/mdi_twitch.svg';
 
 export {
 	TaskManagerLogo,
@@ -36,4 +41,9 @@ export {
 	SalesIcon,
 	StrategyIcon,
 	BudgetingIcon,
+	D3Icon,
+	DenoIcon,
+	JsLogo,
+	SpotifyLogo,
+	TwitchIcon,
 };

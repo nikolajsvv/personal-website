@@ -16,6 +16,7 @@ module.exports = {
 			},
 			width: {
 				'650': '650px',
+				'950': '950px',
 			},
 			transitionDelay: {
 				'100': '100ms',

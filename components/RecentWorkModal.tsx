@@ -25,15 +25,15 @@ export default function RecentWorkModal({
 			exit={{ opacity: 0 }}
 		>
 			<motion.div
-				className='absolute w-full h-screen inset-0 bg-ghost-white dark:bg-night z-40 flex items-center justify-center '
+				className='absolute w-full h-screen inset-0 bg-ghost-white dark:bg-night z-40 flex items-center justify-center'
 				variants={modalVariants}
 				initial='closed'
 				animate={isOpen ? 'open' : 'closed'}
 				exit='exit'
 			>
-				<div className='flex flex-col md:flex-row h-full w-full lg:w-[950px] mx-auto pt-10 md:px-0 px-4'>
+				<div className='flex flex-col md:flex-row h-full w-full lg:w-[950px] pt-10 md:px-0 px-4'>
 					{/* Left Column */}
-					<div className=' flex flex-col w-full md:w-1/3'>
+					<div className=' flex flex-col w-full md:w-1/3 bg-gray-100'>
 						<HiOutlineArrowLeft
 							onClick={onClose}
 							className='text-night dark:text-ghost-white h-8 w-8 cursor-pointer hover:scale-125 hover:text-neon-blue dark:hover:text-neon-blue rounded-full transition-all duration-700'
@@ -63,22 +63,12 @@ export default function RecentWorkModal({
 										/>
 									))}
 								</div>
-								{/* <ul className='flex flex-row space-x-4 mt-2 justify-start'>
-									{tech.map((technology, index) => (
-										<li
-											key={index}
-											className='text-xl text-night dark:text-ghost-white max-w-[150px]'
-										>
-											{technology}
-										</li>
-									))}
-								</ul> */}
 							</div>
 						</div>
 					</div>
 
 					{/* Right Column */}
-					<div className='flex flex-col w-full md:w-1/2 justify-start mt-10'>
+					<div className='flex flex-col w-full md:w-1/2 justify-start mt-10 bg-gray-200'>
 						<p className='text-sm text-night dark:text-ghost-white'>
 							{renderDescription(description)}
 						</p>
