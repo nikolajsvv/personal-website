@@ -1,0 +1,13 @@
+[
+	{
+		"id": "1",
+		"title": "D3no Data",
+		"description": "D3no Data is a pioneering data visualization and charting library crafted specifically for the Deno runtime environment. At its inception, Deno's unique ecosystem lacked access to npm libraries, presenting a void in terms of charting and data visualization tools. Recognizing this, our team leveraged D3.js to curate a lightweight library, offering a plethora of functionalities and a high degree of customizability for chart visualizations.",
+		"image": "path/to/imageA.jpg",
+		"techUsed": ["D3.js", "TypeScript", "Deno"],
+		"link": {
+			"code": "https://github.com/oslabs-beta/d3no-data",
+			"live": "https://d3nodata.deno.dev/"
+		}
+	}
+]
