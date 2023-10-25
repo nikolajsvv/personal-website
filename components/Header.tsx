@@ -14,10 +14,38 @@ export default function Header() {
 				</p>
 			</div>
 			<div className='flex justify-start items-start w-full space-x-[30px] p-5 md:p-3 text-night dark:text-ghost-white '>
-				<FaGithub className='w-[30px] h-[30px]  cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
-				<FaLinkedin className='w-[30px] h-[30px] cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
-				<IoMail className='w-[30px] h-[30px] cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
-				<FaTwitterSquare className='w-[30px] h-[30px] cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
+				<a
+					href='https://github.com/nikolajsvv'
+					target='_blank'
+					aria-label='navigation'
+					rel='noreferrer noopener'
+				>
+					<FaGithub className='w-[30px] h-[30px]  cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
+				</a>
+				<a
+					href='https://www.linkedin.com/in/nikolajsveidis'
+					target='_blank'
+					aria-label='navigation'
+					rel='noreferrer noopener'
+				>
+					<FaLinkedin className='w-[30px] h-[30px] cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
+				</a>
+				<a
+					href='mailto:nikolajsvv@gmail.com'
+					target='_blank'
+					aria-label='navigation'
+					rel='noreferrer noopener'
+				>
+					<IoMail className='w-[30px] h-[30px] cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
+				</a>
+				<a
+					href='https://twitter.com/_nikolajs'
+					target='_blank'
+					aria-label='navigation'
+					rel='noreferrer noopener'
+				>
+					<FaTwitterSquare className='w-[30px] h-[30px] cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
+				</a>
 			</div>
 		</section>
 	);
