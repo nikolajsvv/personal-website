@@ -1,6 +1,5 @@
 'use client';
 import anime from 'animejs';
-import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
 import {
 	AiFillLinkedin,
@@ -9,10 +8,23 @@ import {
 } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
 import { annotate } from 'rough-notation';
-import RecentWorkCard from '../components/RecentWorkCard';
+import tempBackgroundImage from 'public/images/tempCard.png';
+import Image from 'next/image';
+
+const demoList = [
+	{
+		title: 'Demo Project',
+		description: 'This is a demo project.',
+		tech: ['React', 'TypeScript', 'TailwindCSS'],
+		icon: tempBackgroundImage,
+	},
+];
 
 export default function AboutPage() {
 	const [text, setText] = useState({ first: 'hello', second: 'sveiks' });
+	const [isFullScreen, setIsFullScreen] = useState<boolean>(false);
+	const [selectedProject, setSelectedProject] = useState<any>(null);
+
 	const helloRef = useRef(null);
 	const sveiksRef = useRef(null);
 	const slashRef = useRef(null);
@@ -22,6 +34,11 @@ export default function AboutPage() {
 	const twitterRef = useRef<HTMLDivElement>(null);
 	const emailRef = useRef<HTMLDivElement>(null);
 	const paragraphRef = useRef<HTMLDivElement>(null);
+
+	const handleCardClick = (project: any) => {
+		setSelectedProject(project);
+		setIsFullScreen(true);
+	};
 
 	useEffect(() => {
 		anime({
@@ -61,7 +78,7 @@ export default function AboutPage() {
 			easing: 'easeOutExpo',
 			duration: 250,
 			autoplay: true,
-			delay: 100,
+			delay: 150,
 		});
 		// Adding children to timeline
 		iconTimeline
@@ -105,8 +122,8 @@ export default function AboutPage() {
 	}, []);
 
 	return (
-		<div className='h-screen leading-5 tracking-custom'>
-			<div className='h-full flex flex-col items-center pt-20 md:pt-0 md:justify-center'>
+		<div className='h-screen leading-5 tracking-custom bg-ghost-white dark:bg-night'>
+			<div className='h-full flex flex-col items-center justify-center space-y-6 md:space-y-12'>
 				<div className='flex flex-col md:flex-row items-center justify-center cursor-default text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl uppercase'>
 					<div className='flex flex-col w-full md:w-1/2 justify-center items-center'>
 						<div className='flex flex-row items-center justify-center'>
@@ -170,10 +187,10 @@ export default function AboutPage() {
 							ref={paragraphRef}
 							className='text-dim-gray dark:text-ghost-white text-lg md:text-xl text-center md:text-left'
 						>
-							I am a versatile software engineer currently based in
+							I am a versatile software engineer currently based out of
 							<span ref={austinRef} className='mx-2'>
 								{' '}
-								Austin, TX{' '}
+								New York, NY{' '}
 							</span>
 							with a distinctive blend of experience in web development, data
 							analytics, and finance.
@@ -186,11 +203,37 @@ export default function AboutPage() {
 						<MdEmail className='text-night dark:text-ghost-white h-8 w-8 md:h-10 md:w-10 cursor-pointer hover:scale-125 hover:text-vermilion hover:dark:text-vermilion transform duration-200' />
 					</div>
 				</div>
-				<div className='mt-20 flex flex-col justify-start items-start'>
-					<h1 className='text-2xl font-bold uppercase'>Recent Work</h1>
-					<RecentWorkCard />
-				</div>
 			</div>
+			<div className='flex flex-wrap justify-center gap-4 mt-2 w-full p-4'>
+				{demoList.map((item, index) => (
+					<div
+						key={index}
+						className='bg-white p-4 rounded-lg shadow-lg w-1/3 md:w-1/4 lg:w-1/6 cursor-pointer'
+						onClick={() => handleCardClick(item)}
+					>
+						<Image src={item.icon} alt='project-icon' className='rounded-lg' />
+					</div>
+				))}
+			</div>
+			{isFullScreen && (
+				<div className='fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50'>
+					<div className='bg-white p-4 rounded-lg'>
+						<h2>{selectedProject.title}</h2>
+						<p>{selectedProject.description}</p>
+						<ul>
+							{selectedProject.tech.map((tech: string, index: number) => (
+								<li key={index}>{tech}</li>
+							))}
+						</ul>
+						<button
+							className='mt-4 bg-red-500 text-white p-2 rounded'
+							onClick={() => setIsFullScreen(false)}
+						>
+							Close
+						</button>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 }

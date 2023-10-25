@@ -14,7 +14,9 @@ module.exports = {
 			screens: {
 				xs: '280px',
 			},
-
+			width: {
+				'650': '650px',
+			},
 			transitionDelay: {
 				'100': '100ms',
 				'200': '200ms',
@@ -40,6 +42,7 @@ module.exports = {
 			},
 			fontFamily: {
 				'gt-walsheim': ['GT Walsheim Trial', 'sans'],
+				'maven-pro': ['Maven Pro', 'sans-serif'],
 			},
 			lineHeight: {
 				custom: '20px',

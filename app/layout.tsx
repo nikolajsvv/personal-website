@@ -1,10 +1,10 @@
 import './globals.css';
 import Head from 'next/head';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Maven_Pro } from 'next/font/google';
 import Navbar from '../components/Navbar';
 
-const inter = Inter({ subsets: ['latin'] });
+const mavenPro = Maven_Pro({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'Nikolajs Veidis',
@@ -25,9 +25,7 @@ export default function RootLayout({
 					sizes='<generated>'
 				/>
 			</Head>
-			<body
-				className={`${inter.className} w-screen bg-ghost-white dark:bg-night`}
-			>
+			<body className={`${mavenPro.className} bg-ghost-white dark:bg-night`}>
 				<Navbar />
 				{children}
 			</body>
