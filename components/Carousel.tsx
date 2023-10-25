@@ -70,16 +70,28 @@ export default function Carousel() {
 					onDrag={onDrag} // Add this line to handle the drag event
 					className={`inner-carousel w-full flex space-x-8 ${cursorStyle}`}
 				>
-					<motion.div onClick={() => onCardClick(tempData[0])}>
+					<motion.div
+						aria-label='button'
+						onClick={() => onCardClick(tempData[0])}
+					>
 						<CardComponent data={tempData[0]} />
 					</motion.div>
-					<motion.div onClick={() => onCardClick(tempData[1])}>
+					<motion.div
+						aria-label='button'
+						onClick={() => onCardClick(tempData[1])}
+					>
 						<CardComponent data={tempData[1]} />
 					</motion.div>
-					<motion.div onClick={() => onCardClick(tempData[2])}>
+					<motion.div
+						aria-label='button'
+						onClick={() => onCardClick(tempData[2])}
+					>
 						<CardComponent data={tempData[2]} />
 					</motion.div>
-					<motion.div onClick={() => onCardClick(tempData[3])}>
+					<motion.div
+						aria-label='button'
+						onClick={() => onCardClick(tempData[3])}
+					>
 						<CardComponent data={tempData[3]} />
 					</motion.div>
 				</motion.div>
