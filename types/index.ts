@@ -20,3 +20,16 @@ export type CardProps = {
 export interface CardComponentProps {
 	data: CardProps;
 }
+
+export type ExperienceItemProp = {
+	icon: IconTypes;
+	title: string;
+	description: string;
+	tech: string[];
+};
+
+export type IconTypes = 'engineer' | 'bank' | 'ad';
+
+export type IconMapType = {
+	[key in IconTypes]: JSX.Element;
+};

@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import CardComponent from '@/components/CardComponent';
 import RecentWorkModal from '@/components/RecentWorkModal';
-import Modal from '@/components/Modal';
-import { CardProps, CardComponentProps } from '@/types';
+import { CardProps } from '@/types';
 import {
 	NextLogo,
 	VercelLogo,
@@ -14,13 +13,6 @@ import {
 	TsLogo,
 	FigmaLogo,
 	D3Icon,
-	ExcelLogo,
-	DataIcon,
-	BloombergLogo,
-	VBAIcon,
-	SalesIcon,
-	StrategyIcon,
-	BudgetingIcon,
 	TwitchLogo,
 	DenoLogo,
 	DenoIcon,
@@ -28,6 +20,8 @@ import {
 	SpotifyLogo,
 	TwitchIcon,
 } from '@/utils/images';
+
+const DRAG_LEFT_CONSTRAINT = -800;
 
 export default function Carousel() {
 	const [cursorStyle, setCursorStyle] = useState('cursor-grab');
@@ -58,7 +52,6 @@ export default function Carousel() {
 	useEffect(() => {
 		const handleMouseDown = () => setCursorStyle('cursor-grabbing');
 		const handleMouseUp = () => setCursorStyle('cursor-grab');
-
 		document.addEventListener('mousedown', handleMouseDown);
 		document.addEventListener('mouseup', handleMouseUp);
 
@@ -73,7 +66,7 @@ export default function Carousel() {
 			<motion.div className='w-full'>
 				<motion.div
 					drag='x'
-					dragConstraints={{ right: 0, left: -800 }}
+					dragConstraints={{ right: 0, left: DRAG_LEFT_CONSTRAINT }}
 					onDrag={onDrag} // Add this line to handle the drag event
 					className={`inner-carousel w-full flex space-x-8 ${cursorStyle}`}
 				>
@@ -92,7 +85,7 @@ export default function Carousel() {
 				</motion.div>
 			</motion.div>
 			{isModalOpen && selectedCardData && (
-				<Modal
+				<RecentWorkModal
 					key='recentWorkModal'
 					cardData={selectedCardData}
 					isOpen={isModalOpen}
