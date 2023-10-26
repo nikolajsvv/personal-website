@@ -24,6 +24,8 @@ import TwitchIcon from '@/public/images/mdi_twitch.svg';
 import OpenAIIcon from '@/public/images/logos_openai.svg';
 import FreshLogo from '@/public/images/logos_fresh.svg';
 import ReactLogo from '@/public/images/devicon_react-wordmark.svg';
+import PrismaLogo from '@/public/images/logos_prisma.svg';
+import PlanetscaleLogo from '@/public/images/logos_planetscale.svg';
 
 import TwitchPurple from '@/public/images/twitch-purple.svg';
 import FigmaPurple from '@/public/images/figma-purple.svg';
@@ -37,6 +39,8 @@ import TsPurple from '@/public/images/ts-purple.svg';
 import D3Purple from '@/public/images/d3-purple.svg';
 
 export {
+	PrismaLogo,
+	PlanetscaleLogo,
 	ReactLogo,
 	FreshLogo,
 	OpenAIIcon,

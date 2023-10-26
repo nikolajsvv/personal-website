@@ -22,6 +22,8 @@ import {
 	DenoLogo,
 	FreshLogo,
 	ReactLogo,
+	PrismaLogo,
+	PlanetscaleLogo,
 } from '@/utils/images';
 
 const containerVariants = {
@@ -161,7 +163,8 @@ const tempData = [
 			OpenAIIcon,
 			TsPurple,
 			TailwindPurple,
-			VercelPurple,
+			PrismaLogo,
+			PlanetscaleLogo,
 			NextPurple,
 			FigmaPurple,
 		],
