@@ -23,6 +23,7 @@ import SpotifyLogo from '@/public/images/akar-icons_spotify-fill.svg';
 import TwitchIcon from '@/public/images/mdi_twitch.svg';
 import OpenAIIcon from '@/public/images/logos_openai.svg';
 import FreshLogo from '@/public/images/logos_fresh.svg';
+import ReactLogo from '@/public/images/devicon_react-wordmark.svg';
 
 import TwitchPurple from '@/public/images/twitch-purple.svg';
 import FigmaPurple from '@/public/images/figma-purple.svg';
@@ -36,6 +37,7 @@ import TsPurple from '@/public/images/ts-purple.svg';
 import D3Purple from '@/public/images/d3-purple.svg';
 
 export {
+	ReactLogo,
 	FreshLogo,
 	OpenAIIcon,
 	TsPurple,
