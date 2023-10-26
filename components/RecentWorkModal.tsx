@@ -77,13 +77,13 @@ export default function RecentWorkModal({
 
 					<p className='pt-[18px] font-normal'>Technologies used</p>
 					{/* List of tech images */}
-					<div className='flex flex-wrap space-x-5 mt-4'>
+					<div className='flex flex-wrap space-x-5 mt-1'>
 						{tech.map((imgSrc, index) => (
 							<Image
 								src={imgSrc}
 								alt={imgSrc}
 								key={index}
-								className='hover:scale-125 transition duration-300 select-none object-contain'
+								className='hover:scale-125 transition duration-300 select-none object-contain mt-3'
 							/>
 						))}
 					</div>
