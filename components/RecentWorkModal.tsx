@@ -41,7 +41,7 @@ export default function RecentWorkModal({
 	const { title, link, description, tech } = cardData;
 	return (
 		<motion.div
-			className='absolute inset-0 w-full h-screen bg-ghost-white dark:bg-night z-40 flex justify-center text-night dark:text-ghost-white overflow-x-hidden'
+			className='absolute inset-0 w-full  bg-ghost-white dark:bg-night z-40 flex justify-center text-night dark:text-ghost-white overflow-x-hidden'
 			initial={{ opacity: 0, scale: 0.5 }}
 			animate={{ opacity: 1, scale: 1 }}
 			exit={{ opacity: 0 }}
@@ -90,7 +90,7 @@ export default function RecentWorkModal({
 				</motion.div>
 
 				{/* Description Section */}
-				<div className='w-full p-4 mt-10'>
+				<div className='w-full p-4 mt-10 pb-36 '>
 					<motion.p
 						variants={paragraphVariant}
 						initial='hidden'
