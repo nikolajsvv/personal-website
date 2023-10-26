@@ -2,8 +2,8 @@ import './globals.css';
 import Head from 'next/head';
 import type { Metadata } from 'next';
 import { Maven_Pro } from 'next/font/google';
-import Navbar from '../components/Navbar';
 import { Analytics } from '@vercel/analytics/react';
+// import Navbar from '../components/Navbar';
 
 const mavenPro = Maven_Pro({ subsets: ['latin'] });
 
@@ -29,7 +29,7 @@ export default function RootLayout({
 				/>
 			</Head>
 			<body className={`${mavenPro.className} bg-ghost-white dark:bg-night`}>
-				<Navbar />
+				{/* <Navbar /> */}
 				{children}
 				<Analytics />
 			</body>
