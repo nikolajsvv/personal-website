@@ -16,7 +16,7 @@ import {
 
 export default function Experience() {
 	return (
-		<section className='flex flex-col sm:items-start sm:w-650 w-full mt-10 p-5 md:p-3'>
+		<section className='flex flex-col sm:items-start sm:w-650 w-full mt-10 p-5 md:p-3 mb-20'>
 			<h1 className='text-[24px] font-bold'>Experience</h1>
 			<div className='space-y-6'>
 				<ExperienceItem

@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import CardComponent from '@/components/CardComponent';
 import RecentWorkModal from '@/components/RecentWorkModal';
 import { CardProps } from '@/types';
@@ -15,21 +15,34 @@ import {
 	TwitchPurple,
 	VercelPurple,
 	SpotifyPurple,
-	NextLogo,
-	VercelLogo,
-	TailwindLogo,
 	TaskManagerLogo,
 	StanfordLogo,
-	TsLogo,
-	FigmaLogo,
-	D3Icon,
 	TwitchLogo,
 	DenoLogo,
-	DenoIcon,
-	JsLogo,
-	SpotifyLogo,
-	TwitchIcon,
 } from '@/utils/images';
+
+const containerVariants = {
+	hidden: { opacity: 1 },
+	visible: {
+		opacity: 1,
+		transition: {
+			when: 'beforeChildren',
+			staggerChildren: 0.2, // Adjust for desired stagger delay
+		},
+	},
+};
+
+const itemVariants = {
+	hidden: { opacity: 0, y: 80 }, // Adjust for desired initial position
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			type: 'spring',
+			stiffness: 50,
+		},
+	},
+};
 
 const DRAG_LEFT_CONSTRAINT = -800;
 
@@ -73,47 +86,62 @@ export default function Carousel() {
 
 	return (
 		<div className='w-full pt-[30px] '>
-			<motion.div className='w-full'>
+			<motion.div
+				className='w-full'
+				variants={containerVariants}
+				viewport={{ once: true }}
+				initial='hidden'
+				animate='visible'
+			>
 				<motion.div
 					drag='x'
 					dragConstraints={{ right: 0, left: DRAG_LEFT_CONSTRAINT }}
-					onDrag={onDrag} // Add this line to handle the drag event
+					viewport={{ once: true }}
+					onDrag={onDrag}
 					className={`inner-carousel w-full flex space-x-8 ${cursorStyle}`}
 				>
 					<motion.div
 						aria-label='button'
 						onClick={() => onCardClick(tempData[0])}
+						variants={itemVariants}
 					>
 						<CardComponent data={tempData[0]} />
 					</motion.div>
 					<motion.div
 						aria-label='button'
 						onClick={() => onCardClick(tempData[1])}
+						variants={itemVariants}
 					>
 						<CardComponent data={tempData[1]} />
 					</motion.div>
 					<motion.div
 						aria-label='button'
 						onClick={() => onCardClick(tempData[2])}
+						variants={itemVariants}
 					>
 						<CardComponent data={tempData[2]} />
 					</motion.div>
+
 					<motion.div
 						aria-label='button'
 						onClick={() => onCardClick(tempData[3])}
+						variants={itemVariants}
 					>
 						<CardComponent data={tempData[3]} />
 					</motion.div>
 				</motion.div>
 			</motion.div>
-			{isModalOpen && selectedCardData && (
-				<RecentWorkModal
-					key='recentWorkModal'
-					cardData={selectedCardData}
-					isOpen={isModalOpen}
-					onClose={onModalClose}
-				/>
-			)}
+
+			<AnimatePresence>
+				{isModalOpen && selectedCardData && (
+					<RecentWorkModal
+						key='recentWorkModal'
+						cardData={selectedCardData}
+						isOpen={isModalOpen}
+						onClose={onModalClose}
+					/>
+				)}
+			</AnimatePresence>
 		</div>
 	);
 }
