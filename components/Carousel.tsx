@@ -21,6 +21,9 @@ import {
 	TwitchLogo,
 	DenoLogo,
 	FreshLogo,
+	ReactLogo,
+	PrismaLogo,
+	PlanetscaleLogo,
 } from '@/utils/images';
 
 const containerVariants = {
@@ -160,7 +163,8 @@ const tempData = [
 			OpenAIIcon,
 			TsPurple,
 			TailwindPurple,
-			VercelPurple,
+			PrismaLogo,
+			PlanetscaleLogo,
 			NextPurple,
 			FigmaPurple,
 		],
@@ -175,7 +179,7 @@ const tempData = [
 			"My first professional engagement as a software engineer was a web development contract for Stanford University's Environmental Humanities department. Although I had previously created websites for personal projects, this was my inaugural venture into professional web development. The prospect was both intimidating and exhilarating.\n\nThe journey began with gathering expectations and design preferences from the Environmental Humanities team. While they provided some examples of designs they admired, much of the creative liberty was mine to take. I delved into research and inspiration, crafting 4-5 comprehensive mockups in Figma before settling on the final design. With the team's approval, I transitioned into the coding phase.\n\nThe department sought a visually captivating platform to showcase their students' semester-long achievements, laden with imagery and animations. I opted for Framer Motion for animations—its simplicity and customizable setup resonated with me. For styling, TailwindCSS was my go-to, and React served as the initial framework for building the website.\n\nUpon completing the first draft, I encountered performance issues, largely attributed to the heavy use of images. Given the stipulation for a serverless, cost-free solution, I had to get creative. I serialized all student work—essays, poems, etc.—into JSON format, a cumbersome but effective way to improve site speed. Still grappling with image-related performance issues, I took the significant step of migrating the codebase to Next.js. This move paid off instantly, boosting performance and reducing initial page load times.\n\nWhile I consider the project a success, it was also a learning experience. In hindsight, I would've benefited from clarifying design expectations upfront, enabling a more structured approach to the design phase. Another lesson was the importance of pre-assessing the technical needs of a project; had I initially recognized the performance constraints, I would have opted for Next.js from the get-go. Despite the bumps along the way, this project was pivotal in my growth as an engineer, and I'm incredibly proud of the end result.",
 		image: StanfordLogo,
 		link: 'https://stanford-website.vercel.app/',
-		tech: [TsPurple, TailwindPurple, NextPurple, FigmaPurple],
+		tech: [TsPurple, TailwindPurple, NextPurple, FigmaPurple, ReactLogo],
 		styling: 'text-ghost-white bg-[#9A0000]',
 		imageStyling:
 			'absolute bottom-[15px] right-[15px] h-[75px] w-[49px] pointer-events-none',
