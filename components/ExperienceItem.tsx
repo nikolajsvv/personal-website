@@ -6,13 +6,13 @@ import { ExperienceItemProp, IconMapType } from '@/types';
 
 const ICON_MAP: IconMapType = {
 	engineer: (
-		<PiCodeFill className='h-[30px] w-[30px] md:h-[40px] md:w-[40px] text-night dark:text-ghost-white  transition-transform duration-500' />
+		<PiCodeFill className='h-[30px] w-[30px] md:h-[40px] md:w-[40px] text-night dark:text-ghost-white group-hover:text-neon-blue transition-all duration-500' />
 	),
 	bank: (
-		<BiSolidBank className='h-[30px] w-[30px] md:h-[40px] md:w-[40px] text-night dark:text-ghost-white  transition-transform duration-500' />
+		<BiSolidBank className='h-[30px] w-[30px] md:h-[40px] md:w-[40px] text-night dark:text-ghost-white group-hover:text-neon-blue transition-all duration-500' />
 	),
 	ad: (
-		<RiAdvertisementFill className='h-[30px] w-[30px] md:h-[40px] md:w-[40px] text-night dark:text-ghost-white  transition-transform duration-500' />
+		<RiAdvertisementFill className='h-[30px] w-[30px] md:h-[40px] md:w-[40px] text-night dark:text-ghost-white group-hover:text-neon-blue transition-all duration-500' />
 	),
 };
 
@@ -26,7 +26,7 @@ export default function ExperienceItem({
 		<div className='flex w-full pt-[30px] group'>
 			<div className='pr-3 md:pr-8'>{ICON_MAP[icon]}</div>
 			<div className='flex flex-col -translate-y-[6px] md:-translate-y-1'>
-				<h1 className='text-[24px] font-semibold group-hover:text-neon-blue transition-all select-none tracking-tight'>
+				<h1 className='text-[24px] font-semibold select-none tracking-tight group-hover:text-neon-blue transition-all duration-500'>
 					{title}
 				</h1>
 				<p className='text-[16px] tracking-tight select-none cursor-default'>
@@ -38,7 +38,7 @@ export default function ExperienceItem({
 							src={imgSrc}
 							alt={imgSrc}
 							key={index}
-							className='hover:scale-125 transition duration-300 select-none object-contain'
+							className='hover:scale-125 transition duration-300 select-none object-contain '
 						/>
 					))}
 				</div>
