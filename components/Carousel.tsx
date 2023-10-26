@@ -20,6 +20,7 @@ import {
 	StanfordLogo,
 	TwitchLogo,
 	DenoLogo,
+	FreshLogo,
 } from '@/utils/images';
 
 const containerVariants = {
@@ -186,7 +187,7 @@ const tempData = [
 			"D3no Data is a pioneering data visualization and charting library crafted specifically for the Deno runtime environment. At its inception, Deno's unique ecosystem lacked access to npm libraries, presenting a void in terms of charting and data visualization tools. Recognizing this, our team leveraged D3.js to curate a lightweight library, offering a plethora of functionalities and a high degree of customizability for chart visualizations.\n\nOur initial challenge was significant—learning and adopting the Fresh Framework, a new tool built specifically for Deno. At the time, the framework had only been around for about a month. While Fresh did offer its own documentation, external resources were virtually non-existent. This meant relying on a combination of trial-and-error and networking within the developer community, mainly through the framework's Discord server. This forced me to lean heavily into self-guided learning and problem-solving.\n\nLearning Fresh Framework's architecture turned out to be an enlightening experience, particularly its unique structure called 'Island-based client hydration,' which allowed for maximum interactivity.\n\nAnother obstacle was mastering D3.js, an incredibly efficient but complex library. I started with basic chart types, like bar charts, and progressively built up my expertise. This dual-purpose approach let me learn while simultaneously expanding the library’s feature set.\n\nA particularly challenging aspect of the project was developing the website. We aimed to create an interactive platform that enabled developers to tweak chart properties and see real-time results. The end product exceeded our expectations, and I'm exceptionally proud of what we accomplished.\n\nAfter launching in beta, I had the rewarding experience of collaborating with talented engineers on this open-source project. As a crowning achievement, D3no Data was featured in the Deno Newsletter, earning us some well-deserved recognition.",
 		image: DenoLogo,
 		link: 'https://d3nodata.deno.dev/',
-		tech: [D3Purple, TsPurple, DenoPurple],
+		tech: [D3Purple, FreshLogo, DenoPurple, TsPurple],
 		styling: 'text-black bg-[#FFFFFF]',
 		imageStyling:
 			'absolute bottom-[15px] right-[15px] h-[72px] w-[72px] pointer-events-none',
