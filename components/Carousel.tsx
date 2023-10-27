@@ -174,18 +174,6 @@ const tempData = [
 	},
 	{
 		id: '2',
-		title: "A visual representation of students' semester-long course work.",
-		description:
-			"My first professional engagement as a software engineer was a web development contract for Stanford University's Environmental Humanities department. Although I had previously created websites for personal projects, this was my inaugural venture into professional web development. The prospect was both intimidating and exhilarating.\n\nThe journey began with gathering expectations and design preferences from the Environmental Humanities team. While they provided some examples of designs they admired, much of the creative liberty was mine to take. I delved into research and inspiration, crafting 4-5 comprehensive mockups in Figma before settling on the final design. With the team's approval, I transitioned into the coding phase.\n\nThe department sought a visually captivating platform to showcase their students' semester-long achievements, laden with imagery and animations. I opted for Framer Motion for animations—its simplicity and customizable setup resonated with me. For styling, TailwindCSS was my go-to, and React served as the initial framework for building the website.\n\nUpon completing the first draft, I encountered performance issues, largely attributed to the heavy use of images. Given the stipulation for a serverless, cost-free solution, I had to get creative. I serialized all student work—essays, poems, etc.—into JSON format, a cumbersome but effective way to improve site speed. Still grappling with image-related performance issues, I took the significant step of migrating the codebase to Next.js. This move paid off instantly, boosting performance and reducing initial page load times.\n\nWhile I consider the project a success, it was also a learning experience. In hindsight, I would've benefited from clarifying design expectations upfront, enabling a more structured approach to the design phase. Another lesson was the importance of pre-assessing the technical needs of a project; had I initially recognized the performance constraints, I would have opted for Next.js from the get-go. Despite the bumps along the way, this project was pivotal in my growth as an engineer, and I'm incredibly proud of the end result.",
-		image: StanfordLogo,
-		link: 'https://stanford-website.vercel.app/',
-		tech: [TsPurple, TailwindPurple, NextPurple, FigmaPurple, ReactLogo],
-		styling: 'text-ghost-white bg-[#9A0000]',
-		imageStyling:
-			'absolute bottom-[15px] right-[15px] h-[75px] w-[49px] pointer-events-none',
-	},
-	{
-		id: '3',
 		title: 'Data visualization library for Deno',
 		description:
 			"D3no Data is a pioneering data visualization and charting library crafted specifically for the Deno runtime environment. At its inception, Deno's unique ecosystem lacked access to npm libraries, presenting a void in terms of charting and data visualization tools. Recognizing this, our team leveraged D3.js to curate a lightweight library, offering a plethora of functionalities and a high degree of customizability for chart visualizations.\n\nOur initial challenge was significant—learning and adopting the Fresh Framework, a new tool built specifically for Deno. At the time, the framework had only been around for about a month. While Fresh did offer its own documentation, external resources were virtually non-existent. This meant relying on a combination of trial-and-error and networking within the developer community, mainly through the framework's Discord server. This forced me to lean heavily into self-guided learning and problem-solving.\n\nLearning Fresh Framework's architecture turned out to be an enlightening experience, particularly its unique structure called 'Island-based client hydration,' which allowed for maximum interactivity.\n\nAnother obstacle was mastering D3.js, an incredibly efficient but complex library. I started with basic chart types, like bar charts, and progressively built up my expertise. This dual-purpose approach let me learn while simultaneously expanding the library’s feature set.\n\nA particularly challenging aspect of the project was developing the website. We aimed to create an interactive platform that enabled developers to tweak chart properties and see real-time results. The end product exceeded our expectations, and I'm exceptionally proud of what we accomplished.\n\nAfter launching in beta, I had the rewarding experience of collaborating with talented engineers on this open-source project. As a crowning achievement, D3no Data was featured in the Deno Newsletter, earning us some well-deserved recognition.",
@@ -196,6 +184,19 @@ const tempData = [
 		imageStyling:
 			'absolute bottom-[15px] right-[15px] h-[72px] w-[72px] pointer-events-none',
 	},
+	{
+		id: '3',
+		title: "A visual representation of students' semester-long course work.",
+		description:
+			"My first professional engagement as a software engineer was a web development contract for Stanford University's Environmental Humanities department. Although I had previously created websites for personal projects, this was my inaugural venture into professional web development. The prospect was both intimidating and exhilarating.\n\nThe journey began with gathering expectations and design preferences from the Environmental Humanities team. While they provided some examples of designs they admired, much of the creative liberty was mine to take. I delved into research and inspiration, crafting 4-5 comprehensive mockups in Figma before settling on the final design. With the team's approval, I transitioned into the coding phase.\n\nThe department sought a visually captivating platform to showcase their students' semester-long achievements, laden with imagery and animations. I opted for Framer Motion for animations—its simplicity and customizable setup resonated with me. For styling, TailwindCSS was my go-to, and React served as the initial framework for building the website.\n\nUpon completing the first draft, I encountered performance issues, largely attributed to the heavy use of images. Given the stipulation for a serverless, cost-free solution, I had to get creative. I serialized all student work—essays, poems, etc.—into JSON format, a cumbersome but effective way to improve site speed. Still grappling with image-related performance issues, I took the significant step of migrating the codebase to Next.js. This move paid off instantly, boosting performance and reducing initial page load times.\n\nWhile I consider the project a success, it was also a learning experience. In hindsight, I would've benefited from clarifying design expectations upfront, enabling a more structured approach to the design phase. Another lesson was the importance of pre-assessing the technical needs of a project; had I initially recognized the performance constraints, I would have opted for Next.js from the get-go. Despite the bumps along the way, this project was pivotal in my growth as an engineer, and I'm incredibly proud of the end result.",
+		image: StanfordLogo,
+		link: 'https://stanford-website.vercel.app/',
+		tech: [TsPurple, TailwindPurple, NextPurple, FigmaPurple, ReactLogo],
+		styling: 'text-ghost-white bg-[#9A0000]',
+		imageStyling:
+			'absolute bottom-[15px] right-[15px] h-[75px] w-[49px] pointer-events-none',
+	},
+
 	{
 		id: '4',
 		title: 'Chat bot that integrates Spotify API',
