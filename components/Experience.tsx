@@ -46,7 +46,7 @@ export default function Experience() {
 					icon='engineer'
 					title='Freelance developer'
 					description='As showcased in my recent work, I worked as a freelance web developer.
-					My latest freelance project was with Stanford University where
+					My latest freelance project was with Stanford University where I
 					designed, developed, and maintained the website for a course in the
 					Environmental Humanities department.'
 					tech={[VercelLogo, NextLogo, TailwindLogo, TsLogo, FigmaLogo]}
