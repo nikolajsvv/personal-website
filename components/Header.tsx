@@ -1,5 +1,10 @@
 'use client';
-import { FaGithub, FaLinkedin, FaTwitterSquare } from 'react-icons/fa';
+import {
+	FaMedium,
+	FaGithub,
+	FaLinkedin,
+	FaTwitterSquare,
+} from 'react-icons/fa';
 import { IoMail } from 'react-icons/io5';
 import { motion } from 'framer-motion';
 
@@ -77,7 +82,7 @@ export default function Header() {
 				</motion.p>
 			</div>
 			<motion.div
-				className='flex justify-start items-start w-full space-x-[30px] p-5 md:p-3 text-night dark:text-ghost-white'
+				className='flex justify-start items-start w-full space-x-[20px] p-5 md:p-3 text-night dark:text-ghost-white'
 				variants={containerVariants}
 				initial='hidden'
 				animate='visible'
@@ -117,6 +122,15 @@ export default function Header() {
 					variants={itemVariants}
 				>
 					<FaTwitterSquare className='w-[30px] h-[30px] cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
+				</motion.a>
+				<motion.a
+					href='https://medium.com/@nikolajs'
+					target='_blank'
+					aria-label='navigation'
+					rel='noreferrer noopener'
+					variants={itemVariants}
+				>
+					<FaMedium className='w-[30px] h-[30px] cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
 				</motion.a>
 			</motion.div>
 		</section>
