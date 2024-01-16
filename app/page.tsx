@@ -1,6 +1,7 @@
 import Experience from '@/components/Experience';
 import Header from '@/components/Header';
 import RecentWork from '@/components/RecentWork';
+import DynamicCursor from '@/components/DynamicCursor';
 
 export default function HomePage() {
 	return (

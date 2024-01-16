@@ -5,8 +5,9 @@ import {
 	FaLinkedin,
 	FaTwitterSquare,
 } from 'react-icons/fa';
-import { IoMail } from 'react-icons/io5';
 import { motion } from 'framer-motion';
+import { GiSpeaker } from 'react-icons/gi';
+import { useRef } from 'react';
 
 const titleVariants = {
 	hidden: {
@@ -59,6 +60,16 @@ const itemVariants = {
 };
 
 export default function Header() {
+	const audioRef = useRef<HTMLAudioElement>(null);
+
+	const playAudio = () => {
+		if (audioRef.current) {
+			audioRef.current?.play();
+		}
+	};
+
+	const audioSrc = '/audio/nikolajs.mp3';
+
 	return (
 		<section className='flex flex-col justify-start sm:items-center sm:w-650 w-full mt-10 select-none'>
 			<div className='flex flex-col sm:flex-row p-5 md:p-3 sm:items-center'>
@@ -66,10 +77,16 @@ export default function Header() {
 					variants={titleVariants}
 					initial='hidden'
 					animate='visible'
-					className='text-[40px] font-extrabold mr-[75px] w-1/3 md:w-full tracking-normal leading-10'
+					className='group text-[40px] font-extrabold mr-[75px] w-1/3 md:w-full tracking-normal leading-10 cursor-pointer'
+					onClick={playAudio}
 				>
-					Nikolajs Veidis
+					<span className='inline-flex items-end'>
+						Nikolajs Veidis
+						<GiSpeaker className='group-hover:text-neon-blue h-7 w-7 -translate-x-10  transform duration-500 group-hover:scale-150 transition-transform' />
+					</span>
 				</motion.h1>
+				<audio ref={audioRef} src={audioSrc} preload='auto' />
+
 				<motion.p
 					variants={descriptionVariants}
 					initial='hidden'
@@ -96,16 +113,8 @@ export default function Header() {
 				>
 					<FaGithub className='w-[30px] h-[30px]  cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
 				</motion.a>
-				<motion.a
-					href='https://www.linkedin.com/in/nikolajsveidis'
-					target='_blank'
-					aria-label='navigation'
-					rel='noreferrer noopener'
-					variants={itemVariants}
-				>
-					<FaLinkedin className='w-[30px] h-[30px] cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
-				</motion.a>
-				<motion.a
+
+				{/* <motion.a
 					href='mailto:nikolajsvv@gmail.com'
 					target='_blank'
 					aria-label='navigation'
@@ -113,7 +122,7 @@ export default function Header() {
 					variants={itemVariants}
 				>
 					<IoMail className='w-[30px] h-[30px] cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
-				</motion.a>
+				</motion.a> */}
 				<motion.a
 					href='https://twitter.com/_nikolajs'
 					target='_blank'
@@ -122,6 +131,15 @@ export default function Header() {
 					variants={itemVariants}
 				>
 					<FaTwitterSquare className='w-[30px] h-[30px] cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
+				</motion.a>
+				<motion.a
+					href='https://www.linkedin.com/in/nikolajsveidis'
+					target='_blank'
+					aria-label='navigation'
+					rel='noreferrer noopener'
+					variants={itemVariants}
+				>
+					<FaLinkedin className='w-[30px] h-[30px] cursor-pointer hover:scale-125 hover:text-neon-blue transition-transform duration-500' />
 				</motion.a>
 				<motion.a
 					href='https://medium.com/@nikolajs'
