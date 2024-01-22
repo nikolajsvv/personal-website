@@ -77,16 +77,14 @@ export default function Header() {
 					variants={titleVariants}
 					initial='hidden'
 					animate='visible'
-					className='group text-[40px] font-extrabold mr-[75px] w-1/3 md:w-full tracking-normal leading-10 cursor-pointer'
-					onClick={playAudio}
+					className='group text-[40px] font-extrabold mr-[75px] w-1/3 md:w-full tracking-normal leading-10'
 				>
 					<span className='inline-flex items-end'>
 						Nikolajs Veidis
-						<GiSpeaker className='group-hover:text-neon-blue h-7 w-7 -translate-x-10  transform duration-500 group-hover:scale-150 transition-transform' />
+						{/*<GiSpeaker className='group-hover:text-neon-blue h-7 w-7 -translate-x-10  transform duration-500 group-hover:scale-150 transition-transform' />*/}
 					</span>
 				</motion.h1>
-				<audio ref={audioRef} src={audioSrc} preload='auto' />
-
+				{/* <audio ref={audioRef} src={audioSrc} preload='auto' />*/}
 				<motion.p
 					variants={descriptionVariants}
 					initial='hidden'
